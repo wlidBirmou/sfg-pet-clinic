@@ -6,7 +6,25 @@
 </head>
 <body>
 <h1 th:text="'Vet index Page'">Index Page</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>First name</th>
+        <th>Last name</th>
+    </tr>
+    </thead>
+    <tbody>
 
+    <!--/*@thymesVar id="vets" type="java.util.Set"*/-->
+    <!--/*@thymesVar id="vet" type="guru.springframework.sfgpetclinic.model.Vet"*/-->
+    <tr th:each="vet : ${vets}">
+        <td th:text="${vet.id}"></td>
+        <td th:text="${vet.firstName}"></td>
+        <td th:text="${vet.lastName}"></td>
+    </tr>
+    </tbody>
+</table>
 
 </body>
 </html>
