@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body}, 'home')}" >
 <head>
     <meta charset="UTF-8">
     <title>Pet Clinic vets index</title>
 </head>
 <body>
-<h1 th:text="'Vet index Page'">Index Page</h1>
-<table>
+<h2 th:text="'Vets'">Vets</h2>
+<table class="table table-striped">
     <thead>
     <tr>
-        <th>Id</th>
-        <th>First name</th>
-        <th>Last name</th>
+        <th style="width:200px" >Id</th>
+        <th style="width:200px" >First name</th>
+        <th style="width:200px" >Last name</th>
     </tr>
     </thead>
     <tbody>
@@ -19,9 +19,9 @@
     <!--/*@thymesVar id="vets" type="java.util.Set"*/-->
     <!--/*@thymesVar id="vet" type="guru.springframework.sfgpetclinic.model.Vet"*/-->
     <tr th:each="vet : ${vets}">
-        <td th:text="${vet.id}"></td>
-        <td th:text="${vet.firstName}"></td>
-        <td th:text="${vet.lastName}"></td>
+        <td style="width:200px" th:text="${vet.id}"></td>
+        <td style="width:200px" th:text="${vet.firstName}"></td>
+        <td style="width:200px" th:text="${vet.lastName}"></td>
     </tr>
     </tbody>
 </table>
