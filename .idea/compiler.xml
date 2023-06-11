@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -13,14 +14,14 @@
     <bytecodeTargetLevel>
       <module name="pet-clinic-data" target="17" />
       <module name="pet-clinic-web" target="17" />
-      <module name="sfg-pet-clinic" target="17" />
+      <module name="sfg-pet-clinic" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="pet-clinic-data" options="-parameters" />
       <module name="pet-clinic-web" options="-parameters" />
-      <module name="sfg-pet-clinic" options="-parameters" />
+      <module name="sfg-pet-clinic" options="" />
     </option>
   </component>
 </project>
