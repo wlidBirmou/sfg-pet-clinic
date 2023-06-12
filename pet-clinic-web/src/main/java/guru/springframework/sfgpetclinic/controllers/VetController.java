@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-@RequestMapping("/vets")
+@RequestMapping({"/vets","vets.html"})
 public class VetController {
 
     private final VetService vetService;

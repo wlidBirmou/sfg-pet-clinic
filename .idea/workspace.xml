@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa5ca3f3-0c5a-427e-a905-5c284d90d0b4" name="Changes" comment="several changes">
+    <list default="true" id="aa5ca3f3-0c5a-427e-a905-5c284d90d0b4" name="Changes" comment="Adding specialities to vets on startup">
+      <change afterPath="$PROJECT_DIR$/pet-clinic-web/src/main/resources/templates/notimplemented.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/bootstrap/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/bootstrap/DataLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/Vet.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/Vet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/map/SpecialityServiceMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/map/SpecialityServiceMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/map/VetServiceMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/map/VetServiceMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/OwnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/OwnerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/VetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/VetController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +21,7 @@
       <list>
         <option value="Class" />
         <option value="Interface" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -39,6 +40,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -86,7 +88,7 @@
       <workItem from="1686376965495" duration="1020000" />
       <workItem from="1686442093186" duration="6508000" />
       <workItem from="1686457426546" duration="4507000" />
-      <workItem from="1686516101997" duration="5498000" />
+      <workItem from="1686516101997" duration="6510000" />
     </task>
     <task id="LOCAL-00001" summary="added wro4j and config from Spring pet clinic, closes #24">
       <created>1686442802972</created>
@@ -137,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686539711930</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Adding specialities to vets on startup">
+      <created>1686541450240</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686541450240</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +170,7 @@
     <MESSAGE value="Apply master layout to owner page, closes #21" />
     <MESSAGE value="Apply master layout to vets page, closes #20" />
     <MESSAGE value="several changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="several changes" />
+    <MESSAGE value="Adding specialities to vets on startup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding specialities to vets on startup" />
   </component>
 </project>
