@@ -1,9 +1,14 @@
 package guru.springframework.sfgpetclinic.model;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.io.Serializable;
 
 public class BaseEntity implements Serializable {
-    private Long id;
+
+     protected Long id;
 
     public Long getId() {
         return id;

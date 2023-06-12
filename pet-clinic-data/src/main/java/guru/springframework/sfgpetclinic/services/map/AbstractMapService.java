@@ -24,13 +24,15 @@ public abstract class AbstractMapService<T extends BaseEntity,ID extends Long> {
         return object;
     }
 
+
     public void deleteById(ID id){
         map.remove(id);
     }
-    public void deleteByObject(T object){
+    public void delete(T object){
         map.entrySet().removeIf(entry -> entry.equals(object));
     }
     private Long getNextId(){
+        if(map.keySet().size()==0) return 1L;
         return ((long)Collections.max(map.keySet()))+1;
     }
 

@@ -1,5 +1,7 @@
 package guru.springframework.sfgpetclinic.model;
 
+import java.util.Set;
+
 public class Person extends BaseEntity{
 
     private String firstName;
@@ -21,4 +23,6 @@ public class Person extends BaseEntity{
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+
 }
