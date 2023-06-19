@@ -6,6 +6,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
+@Table(name="speciality")
 public class Speciality extends BaseEntity {
 
     @Column(name="description")
