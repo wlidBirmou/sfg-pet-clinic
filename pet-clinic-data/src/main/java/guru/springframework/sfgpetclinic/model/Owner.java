@@ -8,11 +8,13 @@ import jakarta.persistence.Table;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+@Entity
 public class Owner extends Person {
 
     private String address;
     private String city;
     private String telephone;
+    @OneToMany(mappedBy = "owner")
     Set<Pet> pets=new LinkedHashSet<>();
 
 

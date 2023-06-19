@@ -5,9 +5,12 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 
+@Entity
 public class Pet  extends BaseEntity {
 
+    @ManyToOne(fetch =FetchType.EAGER)
     private PetType petType;
+    @ManyToOne(fetch = FetchType.EAGER)
     private Owner owner;
     private LocalDate birthDate;
     private String name;

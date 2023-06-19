@@ -5,9 +5,12 @@ import jakarta.persistence.*;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+@Entity
 public class Vet  extends Person{
 
     private Long specialityId;
+    @ManyToMany
+    @JoinTable(name = "vet-speciality", joinColumns = @JoinColumn(name = "vet_id",referencedColumnName = "speciality_id"))
     private Set<Speciality> specialities=new LinkedHashSet<>();
 
 

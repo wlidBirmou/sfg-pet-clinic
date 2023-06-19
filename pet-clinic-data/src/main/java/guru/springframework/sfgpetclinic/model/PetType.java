@@ -7,10 +7,12 @@ import jakarta.persistence.Table;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+@Entity
 public class PetType  extends BaseEntity{
 
     private String name;
 
+    @OneToMany(mappedBy = "petType")
     Set<Pet> pets=new LinkedHashSet<>();
 
     public String getName() {
