@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa5ca3f3-0c5a-427e-a905-5c284d90d0b4" name="Changes" comment="Adding specialities to vets on startup">
+    <list default="true" id="aa5ca3f3-0c5a-427e-a905-5c284d90d0b4" name="Changes" comment="Implement base entity and Pet,PetType,Vet,Visit,Owner relationships, closes #33">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/BaseEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/Owner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/Pet.java" afterDir="false" />
@@ -95,7 +94,7 @@
       <workItem from="1686516101997" duration="6510000" />
       <workItem from="1686760095858" duration="2946000" />
       <workItem from="1686930209387" duration="95000" />
-      <workItem from="1687185680874" duration="812000" />
+      <workItem from="1687185680874" duration="3238000" />
     </task>
     <task id="LOCAL-00001" summary="added wro4j and config from Spring pet clinic, closes #24">
       <created>1686442802972</created>
@@ -153,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686541450240</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Implement base entity and Pet,PetType,Vet,Visit,Owner relationships, closes #33">
+      <created>1687186587129</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1687186587129</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +184,7 @@
     <MESSAGE value="Apply master layout to vets page, closes #20" />
     <MESSAGE value="several changes" />
     <MESSAGE value="Adding specialities to vets on startup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding specialities to vets on startup" />
+    <MESSAGE value="Implement base entity and Pet,PetType,Vet,Visit,Owner relationships, closes #33" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement base entity and Pet,PetType,Vet,Visit,Owner relationships, closes #33" />
   </component>
 </project>

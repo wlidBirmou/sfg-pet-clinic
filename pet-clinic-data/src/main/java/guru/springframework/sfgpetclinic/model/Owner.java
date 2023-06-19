@@ -1,20 +1,21 @@
 package guru.springframework.sfgpetclinic.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
+@Table(name="owners")
 public class Owner extends Person {
 
+    @Column(name="address")
     private String address;
+    @Column(name="city")
     private String city;
+    @Column(name="telephone")
     private String telephone;
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     Set<Pet> pets=new LinkedHashSet<>();
 
 

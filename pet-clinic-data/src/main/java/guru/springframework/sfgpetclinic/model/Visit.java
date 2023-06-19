@@ -1,16 +1,15 @@
 package guru.springframework.sfgpetclinic.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
 @Entity
 public class Visit extends BaseEntity{
 
+    @Column(name="date")
     private LocalDate date;
+    @Column(name="description")
     private String description;
     @ManyToOne(fetch = FetchType.EAGER)
     private Pet pet;
