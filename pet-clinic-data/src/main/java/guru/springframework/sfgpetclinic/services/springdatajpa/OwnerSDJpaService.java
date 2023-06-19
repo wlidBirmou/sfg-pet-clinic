@@ -6,6 +6,7 @@ import guru.springframework.sfgpetclinic.repositories.PetRepository;
 import guru.springframework.sfgpetclinic.repositories.PetTypeRepository;
 import guru.springframework.sfgpetclinic.services.OwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ import java.util.Set;
 
 @Service
 @Profile("springdatajpa")
-public class ownerSDJpaService implements OwnerService {
+public class OwnerSDJpaService implements OwnerService {
 
 
     private final OwnerRepository ownerRepository;
@@ -24,7 +25,7 @@ public class ownerSDJpaService implements OwnerService {
 
 
     @Autowired
-    public ownerSDJpaService(OwnerRepository ownerRepository, PetRepository petRepository, PetTypeRepository petTypeRepository) {
+    public OwnerSDJpaService(OwnerRepository ownerRepository, PetRepository petRepository, PetTypeRepository petTypeRepository) {
         this.ownerRepository = ownerRepository;
         this.petRepository = petRepository;
         this.petTypeRepository = petTypeRepository;
@@ -32,8 +33,7 @@ public class ownerSDJpaService implements OwnerService {
 
     @Override
     public Owner findById(Long aLong) {
-        Optional<Owner> ownerOptional=this.ownerRepository.findById(aLong);
-        return (ownerOptional.isPresent()?ownerOptional.get():null);
+        return  this.ownerRepository.findById(aLong).orElse(null);
     }
 
     @Override
