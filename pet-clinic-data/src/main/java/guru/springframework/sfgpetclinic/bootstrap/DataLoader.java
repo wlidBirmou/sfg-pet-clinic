@@ -14,14 +14,16 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
+    private final PetService petService;
     private final SpecialityService specialityService;
     private final VisitService visitService;
 
     @Autowired
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, PetService petService, SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
+        this.petService = petService;
         this.specialityService = specialityService;
         this.visitService = visitService;
         System.out.println("Data loader initialized....");
@@ -45,21 +47,16 @@ public class DataLoader implements CommandLineRunner {
         System.out.println("petType Loaded");
 
 
-        Owner owner1 = new Owner();
-        owner1.setId(1L);
-        owner1.setFirstName("Mechael");
-        owner1.setLastName("Weston");
-        owner1.setAddress("123 Brickerel");
-        owner1.setCity("Miami");
-        owner1.setTelephone("123493049");
+        Owner owner1=Owner.builder().id(1L).firstName("Mechael").lastName("Weston").address("123 Brickerel").city("Miami").telephone("123493049").build();
+
         Pet mikesPet=new Pet();
         mikesPet.setPetType(dog);
         mikesPet.setOwner(owner1);
         mikesPet.setName("Rosco");
         mikesPet.setBirthDate(LocalDate.of(2011,02,05));
         owner1.getPets().add(mikesPet);
-
-        ownerService.save(owner1);
+        this.ownerService.save(owner1);
+        this.petService.save(mikesPet);
 
 
 
@@ -77,8 +74,8 @@ public class DataLoader implements CommandLineRunner {
         fionaPet.setName("Sisi");
         fionaPet.setBirthDate(LocalDate.of(2016,03,12));
         owner2.getPets().add(fionaPet);
-
-        ownerService.save(owner2);
+        this.ownerService.save(owner2);
+        this.petService.save(fionaPet);
 
         System.out.println("Loaded Visits....");
         Visit catVisit=new Visit();

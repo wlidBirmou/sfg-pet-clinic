@@ -1,10 +1,17 @@
 package guru.springframework.sfgpetclinic.model;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name="vets")
 public class Vet  extends Person{
@@ -14,11 +21,4 @@ public class Vet  extends Person{
     private Set<Speciality> specialities=new LinkedHashSet<>();
 
 
-    public Set<Speciality> getSpecialities() {
-        return specialities;
-    }
-
-    public void setSpecialities(Set<Speciality> specialities) {
-        this.specialities = specialities;
-    }
 }

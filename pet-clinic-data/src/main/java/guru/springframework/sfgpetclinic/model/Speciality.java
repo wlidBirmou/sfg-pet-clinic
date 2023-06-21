@@ -1,10 +1,16 @@
 package guru.springframework.sfgpetclinic.model;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name="speciality")
 public class Speciality extends BaseEntity {
@@ -15,11 +21,4 @@ public class Speciality extends BaseEntity {
     @ManyToMany(mappedBy = "specialities")
     private Set<Vet> vets=new LinkedHashSet<>();
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }
