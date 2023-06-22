@@ -24,7 +24,7 @@ public class Owner extends Person {
     Set<Pet> pets=new LinkedHashSet<>();
 
     @Builder
-    public Owner(Long id, String firstName, String lastName, String address, String city, String telephone) {
+    public Owner(Long id, String firstName, String lastName, String address, String city, String telephone ) {
         super(id, firstName, lastName);
         this.address = address;
         this.city = city;
