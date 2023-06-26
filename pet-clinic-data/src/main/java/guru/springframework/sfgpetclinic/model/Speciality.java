@@ -21,4 +21,9 @@ public class Speciality extends BaseEntity {
     @ManyToMany(mappedBy = "specialities")
     private Set<Vet> vets=new LinkedHashSet<>();
 
+    @Builder
+    public Speciality(Long id, String description) {
+        super(id);
+        this.description = description;
+    }
 }

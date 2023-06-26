@@ -22,4 +22,10 @@ public class Visit extends BaseEntity{
     @JoinColumn(columnDefinition = "pet_id")
     private Pet pet;
 
+    @Builder
+    public Visit(Long id, LocalDate date, String description) {
+        super(id);
+        this.date = date;
+        this.description = description;
+    }
 }

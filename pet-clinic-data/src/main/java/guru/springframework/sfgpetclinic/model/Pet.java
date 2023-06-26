@@ -35,5 +35,10 @@ public class Pet  extends BaseEntity {
     @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL)
     private Set<Visit> visits=new LinkedHashSet<>();
 
-
+    @Builder
+    public Pet(Long id, String name, LocalDate birthDate) {
+        super(id);
+        this.name = name;
+        this.birthDate = birthDate;
+    }
 }

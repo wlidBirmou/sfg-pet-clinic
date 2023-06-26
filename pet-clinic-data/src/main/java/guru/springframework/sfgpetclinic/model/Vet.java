@@ -20,5 +20,8 @@ public class Vet  extends Person{
     @JoinTable(name = "vet-specialties", joinColumns = @JoinColumn(name = "vet_id"),inverseJoinColumns = @JoinColumn(name="speciality_id"))
     private Set<Speciality> specialities=new LinkedHashSet<>();
 
-
+    @Builder
+    public Vet(Long id, String firstName, String lastName) {
+        super(id, firstName, lastName);
+    }
 }
