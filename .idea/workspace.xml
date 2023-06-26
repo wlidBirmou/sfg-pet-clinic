@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa5ca3f3-0c5a-427e-a905-5c284d90d0b4" name="Changes" comment="Integration of project lombok to the project, closes #46">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_26.xml" beforeDir="false" />
+    <list default="true" id="aa5ca3f3-0c5a-427e-a905-5c284d90d0b4" name="Changes" comment="Upgrade to JUnit5, closes #4">
+      <change afterPath="$PROJECT_DIR$/pet-clinic-data/src/test/java/guru/springframework/sfgpetclinic/model/OwnerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pet-clinic-data/src/test/java/guru/springframework/sfgpetclinic/services/map/OwnerMapServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pet-clinic-data/src/test/java/guru/springframework/sfgpetclinic/services/map/PetMapServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-clinic-data/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/Owner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-clinic-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-web/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-clinic-web/src/test/java/guru/springframework/sfgpetclinic/SfgPetClinicApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-web/src/test/java/guru/springframework/sfgpetclinic/SfgPetClinicApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/map/AbstractMapService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/map/AbstractMapService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/map/OwnerMapService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/map/OwnerMapService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +24,7 @@
         <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -59,8 +61,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/laaka/IdeaProjects/spring5-recipe-app",
+    "last_opened_file_path": "C:/Users/laaka/IdeaProjects/sfg-pet-clinic/pet-clinic-data/src/test/java",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
@@ -73,6 +77,7 @@
       <recent name="guru.springframework.sfgpetclinic.services" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\laaka\IdeaProjects\sfg-pet-clinic\pet-clinic-data\src\test\java" />
       <recent name="C:\Users\laaka\IdeaProjects\sfg-pet-clinic\pet-clinic-web\src\main\resources\templates" />
       <recent name="C:\Users\laaka\IdeaProjects\sfg-pet-clinic\pet-clinic-web\src\main" />
     </key>
@@ -80,12 +85,87 @@
       <recent name="C:\Users\laaka\IdeaProjects\sfg-pet-clinic\pet-clinic-web\src\main\resources" />
       <recent name="C:\Users\laaka\IdeaProjects\sfg-pet-clinic\pet-clinic-web\src\main" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="guru.springframework.sfgpetclinic.services.map" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="guru.springframework.sfgpetclinic.services.map" />
+      <recent name="guru.springframework.sfgpetclinic.model" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="guru.springframework.sfgpetclinic.model" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in pet-clinic-web">
-    <configuration name="All in pet-clinic-web" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pet-clinic-web" />
+  <component name="RunManager" selected="JUnit.All in pet-clinic-data">
+    <configuration name="All in pet-clinic-data" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pet-clinic-data" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OwnerMapServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pet-clinic-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="guru.springframework.sfgpetclinic.services.map.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="guru.springframework.sfgpetclinic.services.map" />
+      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.services.map.OwnerMapServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OwnerMapServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pet-clinic-data" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="guru.springframework.sfgpetclinic.services.map.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="guru.springframework.sfgpetclinic.services.map" />
+      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.services.map.OwnerMapServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OwnerMapServiceTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pet-clinic-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="guru.springframework.sfgpetclinic.services.map.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="guru.springframework.sfgpetclinic.services.map" />
+      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.services.map.OwnerMapServiceTest" />
+      <option name="METHOD_NAME" value="delete" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OwnerTest.testEquals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pet-clinic-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="guru.springframework.sfgpetclinic.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="guru.springframework.sfgpetclinic.model" />
+      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.model.OwnerTest" />
+      <option name="METHOD_NAME" value="testEquals" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -99,7 +179,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in pet-clinic-web" />
+        <item itemvalue="JUnit.All in pet-clinic-data" />
+        <item itemvalue="JUnit.OwnerMapServiceTest (1)" />
+        <item itemvalue="JUnit.OwnerMapServiceTest" />
+        <item itemvalue="JUnit.OwnerMapServiceTest.delete" />
+        <item itemvalue="JUnit.OwnerTest.testEquals" />
       </list>
     </recent_temporary>
   </component>
@@ -121,7 +205,7 @@
       <workItem from="1687366934218" duration="4526000" />
       <workItem from="1687398761908" duration="2396000" />
       <workItem from="1687459079874" duration="1257000" />
-      <workItem from="1687460347920" duration="2062000" />
+      <workItem from="1687460347920" duration="13925000" />
     </task>
     <task id="LOCAL-00001" summary="added wro4j and config from Spring pet clinic, closes #24">
       <created>1686442802972</created>
@@ -242,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687368097533</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Upgrade to JUnit5, closes #4">
+      <created>1687466497886</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1687466497886</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,7 +367,8 @@
     <MESSAGE value="Edit of Save method on Visit map service." />
     <MESSAGE value="Load visits on bootsrap, closes #44" />
     <MESSAGE value="Integration of project lombok to the project, closes #46" />
-    <option name="LAST_COMMIT_MESSAGE" value="Integration of project lombok to the project, closes #46" />
+    <MESSAGE value="Upgrade to JUnit5, closes #4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upgrade to JUnit5, closes #4" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

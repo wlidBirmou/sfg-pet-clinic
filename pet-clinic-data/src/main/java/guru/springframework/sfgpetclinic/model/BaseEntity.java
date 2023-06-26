@@ -13,6 +13,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @MappedSuperclass
+@EqualsAndHashCode
 public class BaseEntity implements Serializable {
 
     @Id

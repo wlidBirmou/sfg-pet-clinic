@@ -4,8 +4,11 @@ import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.services.OwnerService;
 import guru.springframework.sfgpetclinic.services.PetService;
 import guru.springframework.sfgpetclinic.services.PetTypeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 @Profile({"default","map"})
@@ -15,6 +18,7 @@ public class OwnerMapService extends AbstractMapService<Owner,Long > implements 
     private PetTypeService petTypeService;
 
 
+    @Autowired
     public OwnerMapService(PetService petService, PetTypeService petTypeService) {
         this.petService = petService;
         this.petTypeService=petTypeService;
@@ -52,11 +56,13 @@ public class OwnerMapService extends AbstractMapService<Owner,Long > implements 
 
     @Override
     public void deleteById(Long id) {
-        this.deleteById(id);
+        super.deleteById(id);
     }
 
     @Override
     public Owner findByLastName(String lastName) {
+        Optional<Owner> ownerOptional=this.map.values().stream().filter(o -> o.getLastName().equals(lastName)).findFirst();
+        if(ownerOptional.isPresent()) return ownerOptional.get();
         return null;
     }
 }
