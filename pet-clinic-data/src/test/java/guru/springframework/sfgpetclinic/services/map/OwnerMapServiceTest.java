@@ -42,6 +42,11 @@ class OwnerMapServiceTest {
     }
 
     @Test
+    void findAll(){
+        assertEquals(2, this.ownerMapService.findAll().size());
+    }
+
+    @Test
     void findById() {
           Owner owner=this.ownerMapService.findById(1l);
           assertNotNull(owner);
@@ -66,16 +71,27 @@ class OwnerMapServiceTest {
         assertNull(owner);
     }
 
+    @Test
+    void saveNotNull() {
+        Owner owner=this.ownerMapService.save(Owner.builder().build());
+        assertNotNull(owner);
+        assertNotNull(owner.getId());
+    }
 
     @Test
-    @Rollback
+    void saveExistingId(){
+
+        Owner savedOwner=this.ownerMapService.save(Owner.builder().id(1l).firstName("existingId").build());
+        assertEquals("existingId", this.ownerMapService.findById(1l).getFirstName());
+    }
+
+    @Test
     void delete() {
         this.ownerMapService.delete(this.ownerMapService.findById(1l));
         assertNull(this.ownerMapService.findById(1l));
     }
 
     @Test
-    @Rollback
     void deleteById() {
         this.ownerMapService.deleteById(1l);
         Owner owner=this.ownerMapService.findById(1l);
@@ -84,8 +100,13 @@ class OwnerMapServiceTest {
 
     @Test
     void findByLastName() {
-
         Owner owner=this.ownerMapService.findByLastName("LAAKAB");
+        assertNotNull(owner);
         assertEquals(1l,owner.getId());
+    }
+    @Test
+    void findByLastNameNotFound() {
+        Owner owner=this.ownerMapService.findByLastName("thisIsAWrongLastName");
+        assertNull(owner);
     }
 }
