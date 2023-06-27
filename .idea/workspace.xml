@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa5ca3f3-0c5a-427e-a905-5c284d90d0b4" name="Changes" comment="Implementation of tests for JPA Service, closes #47&#10;Implementation of tests for all map services">
-      <change afterPath="$PROJECT_DIR$/pet-clinic-web/src/test/java/guru/springframework/sfgpetclinic/controllers/OwnerControllerTest.java" afterDir="false" />
+    <list default="true" id="aa5ca3f3-0c5a-427e-a905-5c284d90d0b4" name="Changes" comment="Implementation of MVC Tests for OwnerController, closes #55">
+      <change afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,7 +194,7 @@
       <workItem from="1687366934218" duration="4526000" />
       <workItem from="1687398761908" duration="2396000" />
       <workItem from="1687459079874" duration="1257000" />
-      <workItem from="1687460347920" duration="32072000" />
+      <workItem from="1687460347920" duration="32410000" />
     </task>
     <task id="LOCAL-00001" summary="added wro4j and config from Spring pet clinic, closes #24">
       <created>1686442802972</created>
@@ -350,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687846110307</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Implementation of MVC Tests for OwnerController, closes #55">
+      <created>1687881579362</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1687881579362</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +397,8 @@
     <MESSAGE value="Implements builder pattern for all the entities" />
     <MESSAGE value="Implementation of tests for JPA Service, closes #47" />
     <MESSAGE value="Implementation of tests for JPA Service, closes #47&#10;Implementation of tests for all map services" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementation of tests for JPA Service, closes #47&#10;Implementation of tests for all map services" />
+    <MESSAGE value="Implementation of MVC Tests for OwnerController, closes #55" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementation of MVC Tests for OwnerController, closes #55" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
