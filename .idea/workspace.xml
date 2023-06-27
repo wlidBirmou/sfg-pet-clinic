@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa5ca3f3-0c5a-427e-a905-5c284d90d0b4" name="Changes" comment="Implementation of MVC Tests for OwnerController, closes #55">
-      <change afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
+    <list default="true" id="aa5ca3f3-0c5a-427e-a905-5c284d90d0b4" name="Changes" comment="Adding circleci build file">
+      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-web/target/pet-clinic-web-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-web/target/pet-clinic-web-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +195,7 @@
       <workItem from="1687366934218" duration="4526000" />
       <workItem from="1687398761908" duration="2396000" />
       <workItem from="1687459079874" duration="1257000" />
-      <workItem from="1687460347920" duration="32410000" />
+      <workItem from="1687460347920" duration="33292000" />
     </task>
     <task id="LOCAL-00001" summary="added wro4j and config from Spring pet clinic, closes #24">
       <created>1686442802972</created>
@@ -357,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687881579362</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Adding circleci build file">
+      <created>1687882108390</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1687882108390</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,7 +406,8 @@
     <MESSAGE value="Implementation of tests for JPA Service, closes #47" />
     <MESSAGE value="Implementation of tests for JPA Service, closes #47&#10;Implementation of tests for all map services" />
     <MESSAGE value="Implementation of MVC Tests for OwnerController, closes #55" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementation of MVC Tests for OwnerController, closes #55" />
+    <MESSAGE value="Adding circleci build file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding circleci build file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
