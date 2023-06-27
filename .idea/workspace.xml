@@ -4,23 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa5ca3f3-0c5a-427e-a905-5c284d90d0b4" name="Changes" comment="Implements builder pattern for all the entities">
-      <change afterPath="$PROJECT_DIR$/pet-clinic-data/src/test/java/guru/springframework/sfgpetclinic/services/map/PetTypeMapServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pet-clinic-data/src/test/java/guru/springframework/sfgpetclinic/services/map/SpecialityMapServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pet-clinic-data/src/test/java/guru/springframework/sfgpetclinic/services/map/VetMapServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pet-clinic-data/src/test/java/guru/springframework/sfgpetclinic/services/map/VisitMapServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pet-clinic-data/src/test/java/guru/springframework/sfgpetclinic/services/springdatajpa/OwnerSDJpaServiceTest.java" afterDir="false" />
+    <list default="true" id="aa5ca3f3-0c5a-427e-a905-5c284d90d0b4" name="Changes" comment="Implementation of tests for JPA Service, closes #47&#10;Implementation of tests for all map services">
+      <change afterPath="$PROJECT_DIR$/pet-clinic-web/src/test/java/guru/springframework/sfgpetclinic/controllers/OwnerControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/Pet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/PetType.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/PetType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/Speciality.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/Speciality.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/Vet.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/Vet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/Visit.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/model/Visit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/map/AbstractMapService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/map/AbstractMapService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/map/PetMapService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/map/PetMapService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/map/VisitMapService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/map/VisitMapService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/test/java/guru/springframework/sfgpetclinic/services/map/OwnerMapServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/test/java/guru/springframework/sfgpetclinic/services/map/OwnerMapServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/test/java/guru/springframework/sfgpetclinic/services/map/PetMapServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/test/java/guru/springframework/sfgpetclinic/services/map/PetMapServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +87,7 @@
       <recent name="guru.springframework.sfgpetclinic.services.map" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="guru.springframework.sfgpetclinic.controllers" />
       <recent name="guru.springframework.sfgpetclinic.services.map" />
       <recent name="guru.springframework.sfgpetclinic.services.springdatajpa" />
       <recent name="guru.springframework.sfgpetclinic.model" />
@@ -109,7 +96,7 @@
       <recent name="guru.springframework.sfgpetclinic.model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in pet-clinic-data">
+  <component name="RunManager" selected="JUnit.All in pet-clinic-web">
     <configuration name="All in pet-clinic-data" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pet-clinic-data" />
       <option name="PACKAGE_NAME" value="" />
@@ -118,17 +105,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OwnerMapServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in pet-clinic-web" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pet-clinic-web" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OwnerControllerTest.listOwners" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pet-clinic-web" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="guru.springframework.sfgpetclinic.services.map.*" />
+          <option name="PATTERN" value="guru.springframework.sfgpetclinic.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="guru.springframework.sfgpetclinic.services.map" />
-      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.services.map.OwnerMapServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="guru.springframework.sfgpetclinic.controllers" />
+      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.controllers.OwnerControllerTest" />
+      <option name="METHOD_NAME" value="listOwners" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -144,22 +140,6 @@
       <option name="PACKAGE_NAME" value="guru.springframework.sfgpetclinic.services.map" />
       <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.services.map.OwnerMapServiceTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OwnerMapServiceTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pet-clinic-web" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="guru.springframework.sfgpetclinic.services.map.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="guru.springframework.sfgpetclinic.services.map" />
-      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.services.map.OwnerMapServiceTest" />
-      <option name="METHOD_NAME" value="delete" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -188,11 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in pet-clinic-web" />
+        <item itemvalue="JUnit.OwnerControllerTest.listOwners" />
         <item itemvalue="JUnit.All in pet-clinic-data" />
         <item itemvalue="JUnit.PetMapServiceTest" />
         <item itemvalue="JUnit.OwnerMapServiceTest (1)" />
-        <item itemvalue="JUnit.OwnerMapServiceTest" />
-        <item itemvalue="JUnit.OwnerMapServiceTest.delete" />
       </list>
     </recent_temporary>
   </component>
@@ -214,7 +194,7 @@
       <workItem from="1687366934218" duration="4526000" />
       <workItem from="1687398761908" duration="2396000" />
       <workItem from="1687459079874" duration="1257000" />
-      <workItem from="1687460347920" duration="28980000" />
+      <workItem from="1687460347920" duration="32072000" />
     </task>
     <task id="LOCAL-00001" summary="added wro4j and config from Spring pet clinic, closes #24">
       <created>1686442802972</created>
@@ -363,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687794375363</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Implementation of tests for JPA Service, closes #47&#10;Implementation of tests for all map services">
+      <created>1687846110307</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1687846110307</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,7 +388,9 @@
     <MESSAGE value="Create test project structure." />
     <MESSAGE value="Create test for Owner map Service, closes #45" />
     <MESSAGE value="Implements builder pattern for all the entities" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implements builder pattern for all the entities" />
+    <MESSAGE value="Implementation of tests for JPA Service, closes #47" />
+    <MESSAGE value="Implementation of tests for JPA Service, closes #47&#10;Implementation of tests for all map services" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementation of tests for JPA Service, closes #47&#10;Implementation of tests for all map services" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
