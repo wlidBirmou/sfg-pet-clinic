@@ -1,15 +1,9 @@
 package guru.springframework.sfgpetclinic.services.map;
 
 import guru.springframework.sfgpetclinic.model.Pet;
-import guru.springframework.sfgpetclinic.model.Pet;
-import guru.springframework.sfgpetclinic.model.PetType;
-import guru.springframework.sfgpetclinic.services.PetService;
-import guru.springframework.sfgpetclinic.services.PetTypeService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.time.LocalDate;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class PetMapServiceTest {
@@ -19,13 +13,9 @@ class PetMapServiceTest {
 
     @BeforeEach
     void setUp() {
-        ;
         this.petMapService=new PetMapService();
-        Pet pet1=Pet.builder().id(1l).firstName("Abderrahim").lastName("LAAKAB").address("123 Sidi yahia")
-                .city("Algiers").telephone("0014383720520").build();
-        Pet pet2=Pet.builder().id(2l).firstName("Said").lastName("MOUHOUNE").address("123 WAHAT, Hydra")
-                .city("Algiers").telephone("00213772847864").build();
-        PetType cat=PetType.builder().name("cat").build();
+        Pet pet1=Pet.builder().id(1l).name("sisi").birthDate(LocalDate.now()).build();
+        Pet pet2=Pet.builder().id(2l).name("chetrane").birthDate(LocalDate.now()).build();
         this.petMapService.save(pet1);
         this.petMapService.save(pet2);
     }
@@ -43,14 +33,14 @@ class PetMapServiceTest {
     }
 
     @Test
-    void findByIdIsNull() {
+    void findByI1dIsNull() {
         Pet pet=this.petMapService.findById(10l);
         assertNull(pet);
-
     }
 
     @Test
     void save() {
+
         assertEquals(2,this.petMapService.findAll().size());
     }
 
@@ -58,6 +48,7 @@ class PetMapServiceTest {
     void saveNull() {
         Pet pet=this.petMapService.save(null);
         assertNull(pet);
+
     }
 
     @Test
@@ -69,9 +60,8 @@ class PetMapServiceTest {
 
     @Test
     void saveExistingId(){
-
-        Pet savedPet=this.petMapService.save(Pet.builder().id(1l).firstName("existingId").build());
-        assertEquals("existingId", this.petMapService.findById(1l).getFirstName());
+        Pet savedPet=this.petMapService.save(Pet.builder().id(1l).name("existingPet").build());
+        assertEquals("existingPet", this.petMapService.findById(1l).getName());
     }
 
     @Test

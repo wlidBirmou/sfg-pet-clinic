@@ -9,7 +9,6 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Entity
 @Table(name="visits")
 public class Visit extends BaseEntity{

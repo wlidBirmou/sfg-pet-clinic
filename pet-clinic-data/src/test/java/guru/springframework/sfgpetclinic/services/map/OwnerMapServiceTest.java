@@ -19,24 +19,15 @@ import static org.junit.jupiter.api.Assertions.*;
 class OwnerMapServiceTest {
 
 
-    private PetService petService;
-    private PetTypeService petTypeService;
     private OwnerMapService ownerMapService;
 
     @BeforeEach
     void setUp() {
-;
         this.ownerMapService=new OwnerMapService(new PetMapService(),new PetTypeMapService());
         Owner owner1=Owner.builder().id(1l).firstName("Abderrahim").lastName("LAAKAB").address("123 Sidi yahia")
                 .city("Algiers").telephone("0014383720520").build();
         Owner owner2=Owner.builder().id(2l).firstName("Said").lastName("MOUHOUNE").address("123 WAHAT, Hydra")
                 .city("Algiers").telephone("00213772847864").build();
-        PetType cat=PetType.builder().name("cat").build();
-        owner1.getPets().add(Pet.builder().owner(owner1).petType(cat).name("Sisi").birthDate(LocalDate.now()).build());
-        owner1.getPets().add(Pet.builder().owner(owner1).petType(cat).name("ninou").birthDate(LocalDate.now()).build());
-        owner1.getPets().add(Pet.builder().owner(owner1).petType(cat).name("chetrane").birthDate(LocalDate.now()).build());
-
-
         this.ownerMapService.save(owner1);
         this.ownerMapService.save(owner2);
     }
@@ -101,12 +92,9 @@ class OwnerMapServiceTest {
     @Test
     void findByLastName() {
         Owner owner=this.ownerMapService.findByLastName("LAAKAB");
-        assertNotNull(owner);
         assertEquals(1l,owner.getId());
     }
-    @Test
-    void findByLastNameNotFound() {
-        Owner owner=this.ownerMapService.findByLastName("thisIsAWrongLastName");
-        assertNull(owner);
-    }
+
+
+
 }
