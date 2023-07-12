@@ -4,9 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa5ca3f3-0c5a-427e-a905-5c284d90d0b4" name="Changes" comment="Adding circleci build file">
-      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
+    <list default="true" id="aa5ca3f3-0c5a-427e-a905-5c284d90d0b4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetTypeclinic.services.map.PetTypeTypeMapServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetTypeclinic.services.map.PetTypeTypeMapServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.model.OwnerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.model.OwnerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.services.map.OwnerMapServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.services.map.OwnerMapServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.services.map.PetMapServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.services.map.PetMapServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.services.map.SpecialityMapServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.services.map.SpecialityMapServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.services.map.VetMapServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.services.map.VetMapServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.services.map.VisitMapServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.services.map.VisitMapServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.services.springdatajpa.OwnerSDJpaServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.services.springdatajpa.OwnerSDJpaServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetTypeclinic.services.map.PetTypeTypeMapServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetTypeclinic.services.map.PetTypeTypeMapServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetclinic.model.OwnerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetclinic.model.OwnerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetclinic.services.map.OwnerMapServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetclinic.services.map.OwnerMapServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetclinic.services.map.PetMapServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetclinic.services.map.PetMapServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetclinic.services.map.SpecialityMapServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetclinic.services.map.SpecialityMapServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetclinic.services.map.VetMapServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetclinic.services.map.VetMapServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetclinic.services.map.VisitMapServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetclinic.services.map.VisitMapServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetclinic.services.springdatajpa.OwnerSDJpaServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/target/surefire-reports/guru.springframework.sfgpetclinic.services.springdatajpa.OwnerSDJpaServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/OwnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/OwnerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-web/src/test/java/guru/springframework/sfgpetclinic/controllers/OwnerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-web/src/test/java/guru/springframework/sfgpetclinic/controllers/OwnerControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-web/target/.wro4j/buildContext.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-web/target/.wro4j/buildContext.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-web/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-web/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-web/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-web/target/pet-clinic-web-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-web/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.SfgPetClinicApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-web/target/surefire-reports/TEST-guru.springframework.sfgpetclinic.controllers.OwnerControllerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-web/target/surefire-reports/guru.springframework.sfgpetclinic.SfgPetClinicApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-web/target/surefire-reports/guru.springframework.sfgpetclinic.controllers.OwnerControllerTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,28 +75,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/laaka/IdeaProjects/sfg-pet-clinic/pet-clinic-data/src/test/java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "spring.configuration.checksum": "921bb763c77aee29f853016678c416f6"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/laaka/IdeaProjects/spring5-recipe-app&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;921bb763c77aee29f853016678c416f6&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="guru.springframework.sfgpetclinic.services" />
@@ -96,7 +127,7 @@
       <recent name="guru.springframework.sfgpetclinic.model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in pet-clinic-web">
+  <component name="RunManager" selected="JUnit.OwnerControllerTest">
     <configuration name="All in pet-clinic-data" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pet-clinic-data" />
       <option name="PACKAGE_NAME" value="" />
@@ -113,6 +144,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OwnerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pet-clinic-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="guru.springframework.sfgpetclinic.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="guru.springframework.sfgpetclinic.controllers" />
+      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.controllers.OwnerControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="OwnerControllerTest.listOwners" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pet-clinic-web" />
       <extension name="coverage">
@@ -125,21 +171,6 @@
       <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.controllers.OwnerControllerTest" />
       <option name="METHOD_NAME" value="listOwners" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OwnerMapServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pet-clinic-data" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="guru.springframework.sfgpetclinic.services.map.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="guru.springframework.sfgpetclinic.services.map" />
-      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.services.map.OwnerMapServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -168,11 +199,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OwnerControllerTest" />
         <item itemvalue="JUnit.All in pet-clinic-web" />
         <item itemvalue="JUnit.OwnerControllerTest.listOwners" />
         <item itemvalue="JUnit.All in pet-clinic-data" />
         <item itemvalue="JUnit.PetMapServiceTest" />
-        <item itemvalue="JUnit.OwnerMapServiceTest (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +225,17 @@
       <workItem from="1687366934218" duration="4526000" />
       <workItem from="1687398761908" duration="2396000" />
       <workItem from="1687459079874" duration="1257000" />
-      <workItem from="1687460347920" duration="33805000" />
+      <workItem from="1687460347920" duration="35233000" />
+      <workItem from="1687910420720" duration="2153000" />
+      <workItem from="1687912587278" duration="1338000" />
+      <workItem from="1687913936164" duration="920000" />
+      <workItem from="1687914867050" duration="1611000" />
+      <workItem from="1687917239678" duration="76000" />
+      <workItem from="1687917326053" duration="2624000" />
+      <workItem from="1688744281477" duration="1225000" />
+      <workItem from="1689107065197" duration="1639000" />
+      <workItem from="1689173701871" duration="494000" />
+      <workItem from="1689174205288" duration="800000" />
     </task>
     <task id="LOCAL-00001" summary="added wro4j and config from Spring pet clinic, closes #24">
       <created>1686442802972</created>
@@ -392,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687883211261</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Correction of circle ci">
+      <created>1687883334709</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1687883334709</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,18 +482,8 @@
     <MESSAGE value="Implementation of tests for JPA Service, closes #47&#10;Implementation of tests for all map services" />
     <MESSAGE value="Implementation of MVC Tests for OwnerController, closes #55" />
     <MESSAGE value="Adding circleci build file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding circleci build file" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/pet-clinic-data/src/test/java/guru/springframework/sfgpetclinic/services/map/OwnerMapServiceTest.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Correction of circle ci" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction of circle ci" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
