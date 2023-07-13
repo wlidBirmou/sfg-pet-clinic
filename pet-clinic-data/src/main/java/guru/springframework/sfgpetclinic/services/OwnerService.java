@@ -9,5 +9,6 @@ public interface OwnerService extends CrudService<Owner,Long> {
 
     public Owner findByLastName(String lastName);
     public List<Owner> findAllByLastNameContains(String lastName);
+    public Owner save(Owner owner);
 
 }

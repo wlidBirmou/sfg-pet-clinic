@@ -2,14 +2,13 @@ package guru.springframework.sfgpetclinic.controllers;
 
 import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.services.OwnerService;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -62,4 +61,34 @@ public class OwnerController {
         }
     }
 
+    @GetMapping("/new")
+    public String initCreationForm(Model model){
+        model.addAttribute("owner",new Owner());
+        return "owners/createOrUpdateForm";
+    }
+
+    @PostMapping("/new")
+    public String processCreationForm(@Valid Owner owner,BindingResult bindingResult){
+        if(bindingResult.hasErrors()) return "owners/createOrUpdateForm";
+        else {
+            Owner savedOwner=this.ownerService.save(owner);
+            return "redirect:/owners/"+savedOwner.getId();
+        }
+    }
+
+    @GetMapping("/{id}/edit")
+    public String initUpdateForm(Model model,@PathVariable Long id){
+        Owner owner=this.ownerService.findById(id);
+        model.addAttribute("owner",owner);
+        return "owners/createOrUpdateForm";
+    }
+
+    @PostMapping("/{id}/edit")
+    public String processUpdateForm(@Valid Owner owner,BindingResult bindingResult, @PathVariable Long id){
+        if(bindingResult.hasErrors()) return "owners/createOrUpdateForm";
+        else {
+            Owner savedOwner=this.ownerService.save(owner);
+            return "redirect:/owners/"+savedOwner.getId();
+        }
+    }
 }
