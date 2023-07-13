@@ -54,9 +54,11 @@ class OwnerSDJpaServiceTest {
 
     @Test
     void findAll() {
-        Set<Owner> set=new LinkedHashSet<>();
-        set.add(owner);
-        when(this.ownerRepository.findAll()).thenReturn(set);
+        List<Owner> list=new ArrayList<>();
+        list.add(owner);
+
+        when(this.ownerRepository.findAll()).thenReturn(list);
+
         Set<Owner> owners=this.ownerSDJpaService.findAll();
         assertNotNull(owners);
         assertEquals(1,owners.size());
@@ -80,5 +82,32 @@ class OwnerSDJpaServiceTest {
         Owner smith=this.ownerSDJpaService.findByLastName("Smith");
         assertNotNull(smith);
         assertEquals("Smith",smith.getLastName() );
+        verify(this.ownerRepository,times(1)).findByLastName(any());
     }
+
+    @Test
+    void findAllByLastName(){
+        List<Owner> owners=new ArrayList<>();
+        owners.add(Owner.builder().id(1l).lastName("Laakab").firstName("Abderrahim").telephone("268466556").city("CDN").build());
+        owners.add(Owner.builder().id(2l).lastName("Laakab").firstName("Mohamed").telephone("268466556").city("NDG").build());
+
+        when(this.ownerRepository.findAllByLastNameContains(anyString())).thenReturn(owners);
+
+        List<Owner> ownersResult=this.ownerSDJpaService.findAllByLastNameContains("Laakab");
+        assertEquals(owners.size(),ownersResult.size());
+
+        verify(this.ownerRepository,times(1)).findAllByLastNameContains(anyString());
+    }
+
+    @Test
+    void findAllByLastNameWhenEmpty (){
+        List<Owner> owners=new ArrayList<>();
+        when(this.ownerRepository.findAllByLastNameContains(anyString())).thenReturn(owners);
+        List<Owner> ownersResult=this.ownerSDJpaService.findAllByLastNameContains("");
+        assertEquals(owners.size(),ownersResult.size());
+        verify(this.ownerRepository,times(1)).findAllByLastNameContains(anyString());
+    }
+
+
+
 }

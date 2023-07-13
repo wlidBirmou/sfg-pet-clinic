@@ -40,12 +40,10 @@ public class DataLoader implements CommandLineRunner {
         PetType dog = new PetType();
         dog.setName("Dog");
         this.petTypeService.save(dog);
-
         PetType cat = new PetType();
         cat.setName("Cat");
         this.petTypeService.save(cat);
         System.out.println("petType Loaded");
-
 
         Owner owner1=Owner.builder().id(1L).firstName("Mechael").lastName("Weston").address("123 Brickerel").city("Miami").telephone("123493049").build();
 
@@ -57,8 +55,6 @@ public class DataLoader implements CommandLineRunner {
         owner1.getPets().add(mikesPet);
         this.ownerService.save(owner1);
         this.petService.save(mikesPet);
-
-
 
         Owner owner2 = new Owner();
         owner2.setId(2L);
@@ -76,30 +72,25 @@ public class DataLoader implements CommandLineRunner {
         owner2.getPets().add(fionaPet);
         this.ownerService.save(owner2);
         this.petService.save(fionaPet);
-
         System.out.println("Loaded Visits....");
+
         Visit catVisit=new Visit();
         catVisit.setPet(fionaPet);
         catVisit.setDescription("Sneezy kitty");
         catVisit.setDate(LocalDate.now());
-
         this.visitService.save(catVisit);
-
         System.out.println("Loaded owners....");
 
 
         Speciality radiology=new Speciality();
         radiology.setDescription("Radiology");
         this.specialityService.save(radiology);
-
         Speciality surgery=new Speciality();
         surgery.setDescription("Surgery");
         this.specialityService.save(surgery);
-
         Speciality dentistry=new Speciality();
         dentistry.setDescription("Dentistry");
         this.specialityService.save(dentistry);
-
         System.out.println("Loaded specialties....");
 
         Vet vet1 = new Vet();
@@ -108,14 +99,12 @@ public class DataLoader implements CommandLineRunner {
         vet1.setLastName("Axe");
         vet1.getSpecialities().add(radiology);
         vetService.save(vet1);
-
         Vet vet2 = new Vet();
         vet2.setId(2L);
         vet2.setFirstName("Jessie");
         vet2.setLastName("Porter");
         vet2.getSpecialities().add(surgery);
         vetService.save(vet2);
-
         System.out.println("Loaded vets....");
     }
 

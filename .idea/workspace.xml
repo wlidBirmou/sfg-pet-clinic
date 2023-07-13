@@ -4,8 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa5ca3f3-0c5a-427e-a905-5c284d90d0b4" name="Changes" comment="remove of workspace from remote repository">
+    <list default="true" id="aa5ca3f3-0c5a-427e-a905-5c284d90d0b4" name="Changes" comment="Add of data binder in OwnerController&#10;&#10;Implementation of findOwner method in OwnerController +tests&#10;Creation of findOwners.html template">
+      <change afterPath="$PROJECT_DIR$/pet-clinic-web/src/main/resources/templates/owners/findOwners.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pet-clinic-web/src/main/resources/templates/owners/ownerList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/bootstrap/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/bootstrap/DataLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/repositories/OwnerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/repositories/OwnerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/OwnerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/map/OwnerMapService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/map/OwnerMapService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/springdatajpa/OwnerSDJpaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/main/java/guru/springframework/sfgpetclinic/services/springdatajpa/OwnerSDJpaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-data/src/test/java/guru/springframework/sfgpetclinic/services/springdatajpa/OwnerSDJpaServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-data/src/test/java/guru/springframework/sfgpetclinic/services/springdatajpa/OwnerSDJpaServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/OwnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/OwnerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-web/src/test/java/guru/springframework/sfgpetclinic/controllers/OwnerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-web/src/test/java/guru/springframework/sfgpetclinic/controllers/OwnerControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,10 +25,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -97,14 +107,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.SfgPetClinicApplication">
-    <configuration name="All in pet-clinic-data" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pet-clinic-data" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in pet-clinic-web" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pet-clinic-web" />
       <option name="PACKAGE_NAME" value="" />
@@ -113,7 +115,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OwnerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OwnerControllerTest.ProcessFindFormReturnMany" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pet-clinic-web" />
       <extension name="coverage">
         <pattern>
@@ -123,38 +125,56 @@
       </extension>
       <option name="PACKAGE_NAME" value="guru.springframework.sfgpetclinic.controllers" />
       <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.controllers.OwnerControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OwnerControllerTest.listOwners" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pet-clinic-web" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="guru.springframework.sfgpetclinic.controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="guru.springframework.sfgpetclinic.controllers" />
-      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.controllers.OwnerControllerTest" />
-      <option name="METHOD_NAME" value="listOwners" />
+      <option name="METHOD_NAME" value="ProcessFindFormReturnMany" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PetMapServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pet-clinic-data" />
+    <configuration name="OwnerControllerTest.ProcessFindFormReturnOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pet-clinic-web" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="guru.springframework.sfgpetclinic.services.map.*" />
+          <option name="PATTERN" value="guru.springframework.sfgpetclinic.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="guru.springframework.sfgpetclinic.services.map" />
-      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.services.map.PetMapServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="guru.springframework.sfgpetclinic.controllers" />
+      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.controllers.OwnerControllerTest" />
+      <option name="METHOD_NAME" value="ProcessFindFormReturnOne" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OwnerControllerTest.searchOwner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pet-clinic-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="guru.springframework.sfgpetclinic.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="guru.springframework.sfgpetclinic.controllers" />
+      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.controllers.OwnerControllerTest" />
+      <option name="METHOD_NAME" value="searchOwner" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OwnerControllerTest.viewOwner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pet-clinic-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="guru.springframework.sfgpetclinic.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="guru.springframework.sfgpetclinic.controllers" />
+      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.controllers.OwnerControllerTest" />
+      <option name="METHOD_NAME" value="viewOwner" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -168,11 +188,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.OwnerControllerTest" />
         <item itemvalue="JUnit.All in pet-clinic-web" />
-        <item itemvalue="JUnit.OwnerControllerTest.listOwners" />
-        <item itemvalue="JUnit.All in pet-clinic-data" />
-        <item itemvalue="JUnit.PetMapServiceTest" />
+        <item itemvalue="JUnit.OwnerControllerTest.ProcessFindFormReturnMany" />
+        <item itemvalue="JUnit.OwnerControllerTest.ProcessFindFormReturnOne" />
+        <item itemvalue="JUnit.OwnerControllerTest.searchOwner" />
+        <item itemvalue="JUnit.OwnerControllerTest.viewOwner" />
       </list>
     </recent_temporary>
   </component>
@@ -205,6 +225,9 @@
       <workItem from="1689107065197" duration="1639000" />
       <workItem from="1689173701871" duration="494000" />
       <workItem from="1689174205288" duration="800000" />
+      <workItem from="1689211178097" duration="4730000" />
+      <workItem from="1689219810675" duration="169000" />
+      <workItem from="1689220346749" duration="558000" />
     </task>
     <task id="LOCAL-00001" summary="added wro4j and config from Spring pet clinic, closes #24">
       <created>1686442802972</created>
@@ -430,7 +453,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689181085728</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Add of data binder in OwnerController&#10;&#10;Implementation of findOwner method in OwnerCo">
+      <created>1689182341601</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1689182341601</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,7 +478,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Apply master layout to owner page, closes #21" />
     <MESSAGE value="Apply master layout to vets page, closes #20" />
     <MESSAGE value="several changes" />
     <MESSAGE value="Adding specialities to vets on startup" />
@@ -473,7 +502,23 @@
     <MESSAGE value="remove of .idea file from git" />
     <MESSAGE value="Correction of PetType entity (remove of Pet relationship, add of toString method)&#10;Correction in ownerDetails.html template (add of petType.toString())" />
     <MESSAGE value="remove of workspace from remote repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove of workspace from remote repository" />
+    <MESSAGE value="Add of data binder in OwnerController&#10;&#10;Implementation of findOwner method in OwnerCo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add of data binder in OwnerController&#10;&#10;Implementation of findOwner method in OwnerCo" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/pet-clinic-web/src/test/java/guru/springframework/sfgpetclinic/controllers/OwnerControllerTest.java</url>
+          <line>61</line>
+          <properties class="guru.springframework.sfgpetclinic.controllers.OwnerControllerTest" method="findOwners">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

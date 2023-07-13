@@ -2,7 +2,6 @@ package guru.springframework.sfgpetclinic.controllers;
 
 import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.services.OwnerService;
-import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -10,16 +9,15 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
-import static org.hamcrest.Matchers.hasProperty;
-import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.*;
 import static org.mockito.Mockito.*;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -46,36 +44,59 @@ class OwnerControllerTest {
         this.mockMvc= MockMvcBuilders.standaloneSetup(ownerController).build();
     }
 
-    @Test
-    void listOwners() throws Exception {
-        when(this.ownerService.findAll()).thenReturn(this.ownerSet);
-        this.mockMvc.perform(get("/owners")).andExpect(status().isOk()).andExpect(
-                view().name("owners/index")).andExpect(model().attribute("owners", Matchers.hasSize(2)));
-    }
 
     @Test
-    void listOwnersByIndex() throws Exception {
-        when(this.ownerService.findAll()).thenReturn(this.ownerSet);
-        this.mockMvc.perform(get("/owners/index")).andExpect(status().isOk()).andExpect(
-                view().name("owners/index")).andExpect(model().attribute("owners", Matchers.hasSize(2)));
-    }
+    void viewOwner() throws Exception{
+        Owner owner=Owner.builder().id(1l).firstName("Abderrahim").lastName("LAAKAB").address("123 Sidi yahia").city("Algiers").telephone("0014383720520").build();
 
-    @Test
-    void findOwners() throws Exception {
-        mockMvc.perform(get("/owners/find")).andExpect(status().isOk()).andExpect(view().name("notimplemented"));
-        verifyNoInteractions(this.ownerService);
-    }
+        when(this.ownerService.findById(anyLong())).thenReturn(owner);
 
-    @Test
-    void findOwner() throws Exception{
-        Owner owner=Owner.builder().id(1l).firstName("a").lastName("b").city("Montreal").build();
-
-        when(this.ownerService.findById(any())).thenReturn(owner);
         this.mockMvc.perform(get("/owners/1"))
                 .andExpect(status().isOk())
                 .andExpect(model().attributeExists("owner"))
                 .andExpect(model().attribute("owner",hasProperty("id",is(1L))))
                 .andExpect(view().name("owners/ownerDetails"));
-        verify(this.ownerService,times(1)).findById(anyLong());
     }
+
+    @Test
+    void findOwners() throws Exception{
+        this.mockMvc.perform(get("/owners/find"))
+                .andExpect(status().isOk())
+                .andExpect(model().attributeExists("owner"))
+                .andExpect(model().attribute("owner",hasProperty("id",nullValue())))
+                .andExpect(view().name("owners/findOwners"));
+
+        verifyNoInteractions(this.ownerService);
+
+    }
+
+    @Test
+    void ProcessFindFormReturnMany() throws Exception{
+
+        List<Owner> owners=new ArrayList<>();
+        owners.add(Owner.builder().id(1l).lastName("Laakab").firstName("Abderrahim").telephone("268466556").city("CDN").build());
+        owners.add(Owner.builder().id(2l).lastName("Laakab").firstName("Mohamed").telephone("268466556").city("NDG").build());
+
+        when(this.ownerService.findAllByLastNameContains(any())).thenReturn(owners);
+        this.mockMvc.perform(get("/owners/search-owner-for"))
+                .andExpect(status().isOk())
+                .andExpect(model().attributeExists("owners"))
+                .andExpect(model().attribute("owners",hasSize(2)))
+                .andExpect(view().name("owners/ownerList"));
+        verify(this.ownerService,times(1)).findAllByLastNameContains(anyString());
+    }
+
+    @Test
+    void ProcessFindFormReturnOne() throws Exception{
+
+        List<Owner> owners=List.of(Owner.builder().id(1l).lastName("Laakab").firstName("Abderrahim").telephone("268466556").city("CDN").build());
+
+        when(this.ownerService.findAllByLastNameContains(any())).thenReturn(owners);
+        this.mockMvc.perform(get("/owners/search-owner-for"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(view().name("redirect:/owners/1"));
+        verify(this.ownerService,times(1)).findAllByLastNameContains(anyString());
+    }
+
+
 }

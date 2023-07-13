@@ -7,12 +7,11 @@ import guru.springframework.sfgpetclinic.repositories.PetTypeRepository;
 import guru.springframework.sfgpetclinic.services.OwnerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedHashSet;
-import java.util.Optional;
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -66,4 +65,15 @@ public class OwnerSDJpaService implements OwnerService {
     public Owner findByLastName(String lastName) {
         return this.ownerRepository.findByLastName(lastName);
     }
+
+    @Override
+    public List<Owner> findAllByLastNameContains(String lastName) {
+        if(lastName!=null){
+            List<Owner> owners=this.ownerRepository.findAllByLastNameContains(lastName);
+            return owners;
+        } else {
+            throw new RuntimeException("parameter lastName is null");
+        }
+    }
+
 }

@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 @Profile({"default","map"})
@@ -51,7 +54,6 @@ public class OwnerMapService extends AbstractMapService<Owner,Long > implements 
     @Override
     public void delete(Owner owner) {
         super.delete(owner);
-
     }
 
     @Override
@@ -64,4 +66,10 @@ public class OwnerMapService extends AbstractMapService<Owner,Long > implements 
         Owner owner=this.map.values().stream().filter(o -> o.getLastName().equals(lastName)).findFirst().orElse(null);
         return owner;
     }
+
+    @Override
+    public List<Owner> findAllByLastNameContains(String lastName) {
+        return this.findAll().stream().filter(o -> o.getLastName().contains(lastName)).collect(Collectors.toList());
+    }
+
 }
