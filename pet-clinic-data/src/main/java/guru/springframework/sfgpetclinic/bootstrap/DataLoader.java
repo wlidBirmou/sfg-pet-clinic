@@ -54,7 +54,6 @@ public class DataLoader implements CommandLineRunner {
         mikesPet.setBirthDate(LocalDate.of(2011,02,05));
         owner1.getPets().add(mikesPet);
         this.ownerService.save(owner1);
-        this.petService.save(mikesPet);
 
         Owner owner2 = new Owner();
         owner2.setId(2L);
@@ -70,17 +69,15 @@ public class DataLoader implements CommandLineRunner {
         fionaPet.setName("Sisi");
         fionaPet.setBirthDate(LocalDate.of(2016,03,12));
         owner2.getPets().add(fionaPet);
-        this.ownerService.save(owner2);
-        this.petService.save(fionaPet);
         System.out.println("Loaded Visits....");
 
         Visit catVisit=new Visit();
         catVisit.setPet(fionaPet);
         catVisit.setDescription("Sneezy kitty");
         catVisit.setDate(LocalDate.now());
-        this.visitService.save(catVisit);
         System.out.println("Loaded owners....");
 
+        this.ownerService.save(owner2);
 
         Speciality radiology=new Speciality();
         radiology.setDescription("Radiology");
