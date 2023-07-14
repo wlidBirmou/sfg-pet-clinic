@@ -1,9 +1,12 @@
 package guru.springframework.sfgpetclinic.services.springdatajpa;
 
+import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.model.Pet;
+import guru.springframework.sfgpetclinic.repositories.OwnerRepository;
 import guru.springframework.sfgpetclinic.repositories.PetRepository;
 import guru.springframework.sfgpetclinic.repositories.PetRepository;
 import guru.springframework.sfgpetclinic.services.PetService;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
@@ -15,13 +18,11 @@ import java.util.Set;
 @Service
 @Profile("springdatajpa")
 @Slf4j
+@AllArgsConstructor
 public class PetSDJpaService implements PetService {
 
     private final PetRepository petRepository;
 
-    public PetSDJpaService(PetRepository petRepository) {
-        this.petRepository = petRepository;
-    }
 
     @Override
     public Pet findById(Long aLong) {
@@ -30,6 +31,7 @@ public class PetSDJpaService implements PetService {
 
     @Override
     public Pet save(Pet pet) {
+
         return this.petRepository.save(pet);
     }
 
@@ -48,5 +50,18 @@ public class PetSDJpaService implements PetService {
     @Override
     public void deleteById(Long aLong) {
         this.petRepository.deleteById(aLong);
+    }
+
+    @Override
+    public void updatePetInOwner(Owner owner, Pet pet) {
+        owner.getPets().parallelStream().filter(p -> p.getId().equals(pet.getId())).map(p ->
+                {
+                    p.setName(pet.getName());
+                    p.setBirthDate(pet.getBirthDate());
+                    p.setPetType(pet.getPetType());
+                    p.setVisits(pet.getVisits());
+                    return p;
+                }
+        ).findFirst().orElseThrow(()-> new RuntimeException());
     }
 }
