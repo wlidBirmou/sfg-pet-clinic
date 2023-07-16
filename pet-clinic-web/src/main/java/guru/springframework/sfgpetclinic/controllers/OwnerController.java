@@ -86,6 +86,7 @@ public class OwnerController {
     public String processUpdateForm(@Valid Owner owner,BindingResult bindingResult, @PathVariable Long id){
         if(bindingResult.hasErrors()) return "owners/createOrUpdateForm";
         else {
+            owner.setId(id);
             Owner savedOwner=this.ownerService.save(owner);
             return "redirect:/owners/"+savedOwner.getId();
         }
