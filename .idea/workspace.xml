@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa5ca3f3-0c5a-427e-a905-5c284d90d0b4" name="Changes" comment="Remove of Idea file from remote repo" />
+    <list default="true" id="aa5ca3f3-0c5a-427e-a905-5c284d90d0b4" name="Changes" comment="Correction of bug: Update an owner create a new one #60">
+      <change afterPath="$PROJECT_DIR$/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/VisitController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pet-clinic-web/src/main/resources/templates/pets/createOrUpdateVisitForm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pet-clinic-web/src/test/java/guru/springframework/sfgpetclinic/controllers/VisitControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/PetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/PetController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,9 +20,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
         <option value="JUnit5 Test Class" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -108,7 +114,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OwnerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PetControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pet-clinic-web" />
       <extension name="coverage">
         <pattern>
@@ -117,13 +123,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="guru.springframework.sfgpetclinic.controllers" />
-      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.controllers.OwnerControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.controllers.PetControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OwnerControllerTest.ProcessFindFormReturnMany" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PetControllerTest.testProcessCreationForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pet-clinic-web" />
       <extension name="coverage">
         <pattern>
@@ -132,14 +138,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="guru.springframework.sfgpetclinic.controllers" />
-      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.controllers.OwnerControllerTest" />
-      <option name="METHOD_NAME" value="ProcessFindFormReturnMany" />
+      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.controllers.PetControllerTest" />
+      <option name="METHOD_NAME" value="testProcessCreationForm" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OwnerControllerTest.initUpdateForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VisitControllerTest.testInitVisitCreationForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pet-clinic-web" />
       <extension name="coverage">
         <pattern>
@@ -148,14 +154,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="guru.springframework.sfgpetclinic.controllers" />
-      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.controllers.OwnerControllerTest" />
-      <option name="METHOD_NAME" value="initUpdateForm" />
+      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.controllers.VisitControllerTest" />
+      <option name="METHOD_NAME" value="testInitVisitCreationForm" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OwnerControllerTest.processUpdateForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VisitControllerTest.testProcessVisitCreationForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pet-clinic-web" />
       <extension name="coverage">
         <pattern>
@@ -164,8 +170,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="guru.springframework.sfgpetclinic.controllers" />
-      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.controllers.OwnerControllerTest" />
-      <option name="METHOD_NAME" value="processUpdateForm" />
+      <option name="MAIN_CLASS_NAME" value="guru.springframework.sfgpetclinic.controllers.VisitControllerTest" />
+      <option name="METHOD_NAME" value="testProcessVisitCreationForm" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -180,11 +186,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.VisitControllerTest.testProcessVisitCreationForm" />
+        <item itemvalue="JUnit.VisitControllerTest.testInitVisitCreationForm" />
         <item itemvalue="JUnit.All in pet-clinic-web" />
-        <item itemvalue="JUnit.OwnerControllerTest.processUpdateForm" />
-        <item itemvalue="JUnit.OwnerControllerTest.initUpdateForm" />
-        <item itemvalue="JUnit.OwnerControllerTest" />
-        <item itemvalue="JUnit.OwnerControllerTest.ProcessFindFormReturnMany" />
+        <item itemvalue="JUnit.PetControllerTest" />
+        <item itemvalue="JUnit.PetControllerTest.testProcessCreationForm" />
       </list>
     </recent_temporary>
   </component>
@@ -221,6 +227,11 @@
       <workItem from="1689219810675" duration="169000" />
       <workItem from="1689220346749" duration="6647000" />
       <workItem from="1689268061805" duration="4684000" />
+      <workItem from="1689272759821" duration="13417000" />
+      <workItem from="1689309173893" duration="4006000" />
+      <workItem from="1689366531784" duration="1174000" />
+      <workItem from="1689533065283" duration="3226000" />
+      <workItem from="1689607692033" duration="8701000" />
     </task>
     <task id="LOCAL-00001" summary="added wro4j and config from Spring pet clinic, closes #24">
       <created>1686442802972</created>
@@ -488,7 +499,49 @@
       <option name="project" value="LOCAL" />
       <updated>1689272608308</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Remove of Idea file from remote repo">
+      <created>1689272938509</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1689272938509</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Remove of Idea file from remote repo">
+      <created>1689272970908</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1689272970908</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Add model attributes for PetController, #59">
+      <created>1689280653876</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1689280653876</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Correction of dataloader (multiple saving to to entity cascade types)">
+      <created>1689312942043</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1689312942043</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Create a pet service, closes #28">
+      <created>1689313118121</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1689313118121</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Correction of bug: Update an owner create a new one #60">
+      <created>1689538251733</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1689538251733</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,11 +559,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implement Columns in all entities closes" />
-    <MESSAGE value="Implement Spring Data JPA repositories, closes #37" />
-    <MESSAGE value="Create Spring data JPA service for owners., closes #38" />
-    <MESSAGE value="Create Spring data JPA service for all entities., closes #38, #39, #40, #41, #42" />
-    <MESSAGE value="Edit of Save method on Visit map service." />
     <MESSAGE value="Load visits on bootsrap, closes #44" />
     <MESSAGE value="Integration of project lombok to the project, closes #46" />
     <MESSAGE value="Upgrade to JUnit5, closes #4" />
@@ -529,9 +577,14 @@
     <MESSAGE value="Implementation of search Owners feature, closes #58" />
     <MESSAGE value="Add of Spring boot validation dependency" />
     <MESSAGE value="add of isNew method to BaseEntity" />
-    <MESSAGE value="Implementation of create or update an  Owner" />
+    <MESSAGE value="Implementation of create or update an  Owner,&#10;closes #50" />
     <MESSAGE value="Remove of Idea file from remote repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove of Idea file from remote repo" />
+    <MESSAGE value="Add model attributes for PetController #59&#10;,0" />
+    <MESSAGE value="Add model attributes for PetController, #59" />
+    <MESSAGE value="Correction of dataloader (multiple saving to to entity cascade types)" />
+    <MESSAGE value="Create a pet service, closes #28" />
+    <MESSAGE value="Correction of bug: Update an owner create a new one #60" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction of bug: Update an owner create a new one #60" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -554,6 +607,26 @@
           <url>file://$PROJECT_DIR$/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/OwnerController.java</url>
           <line>90</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/VisitController.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/VisitController.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/VisitController.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pet-clinic-web/src/main/java/guru/springframework/sfgpetclinic/controllers/VisitController.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
