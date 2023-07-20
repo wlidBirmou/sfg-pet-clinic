@@ -37,7 +37,6 @@ public class VisitController {
     public String initVisitCreationForm(Model model, Pet pet){
         Visit visit=new Visit();
         model.addAttribute("visit",visit);
-        pet.getVisits().add(visit);
         return "pets/createOrUpdateVisitForm";
     }
 
@@ -45,7 +44,6 @@ public class VisitController {
     public String processVisitCreationForm(Pet pet, Visit visit,@PathVariable Long petId, BindingResult bindingResult){
         if(bindingResult.hasErrors()) return "pets/createOrUpdateVisitForm";
         else {
-            pet.setId(petId);
             pet.getVisits().add(visit);
             visit.setPet(pet);
             Pet savedPet=this.petService.save(pet);
