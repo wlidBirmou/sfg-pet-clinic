@@ -5,26 +5,24 @@
     <title>Pet Clinic vets index</title>
 </head>
 <body>
-<h2 th:text="'Vets'">Vets</h2>
-<table class="table table-striped">
+<!--/*@thymesVar id="vet" type="guru.springframework.sfgpetclinic.model.Vet"*/-->
+<h2>Veterinarians</h2>
+
+<table id="vets" class="table table-striped">
     <thead>
     <tr>
-        <th style="width:200px" >Id</th>
-        <th style="width:200px" >First name</th>
-        <th style="width:200px" `>Last name</th>
+        <th>Name</th>
+        <th>Specialties</th>
     </tr>
     </thead>
     <tbody>
-
-    <!--/*@thymesVar id="vets" type="java.util.Set"*/-->
-    <!--/*@thymesVar id="vet" type="guru.springframework.sfgpetclinic.model.Vet"*/-->
     <tr th:each="vet : ${vets}">
-        <td style="width:200px" th:text="${vet.id}"></td>
-        <td style="width:200px" th:text="${vet.firstName}"></td>
-        <td style="width:200px" th:text="${vet.lastName}"></td>
+        <td th:text="${vet.firstName + ' ' + vet.lastName}"></td>
+        <td><span th:each="specialty : ${vet.specialities}"
+                  th:text="${specialty.description + ' '}" /> <span
+                th:if="${vet?.specialities?.size() == 0}">none</span></td>
     </tr>
     </tbody>
 </table>
-
 </body>
 </html>
