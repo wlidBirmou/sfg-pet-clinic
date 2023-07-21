@@ -2,6 +2,7 @@ package guru.springframework.sfgpetclinic.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.util.LinkedHashSet;
@@ -20,6 +21,7 @@ public class Pet  extends BaseEntity {
     @Column(name="name")
     private String name;
     @Column(name="birth_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthDate;
 
     @ManyToOne(fetch =FetchType.EAGER)
