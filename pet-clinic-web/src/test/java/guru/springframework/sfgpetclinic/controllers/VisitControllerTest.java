@@ -65,7 +65,18 @@ class VisitControllerTest {
     }
 
     @Test
-    public void testInitVisitCreationForm() throws Exception {
+    public void testInitVisitCreationFormwithReferer() throws Exception {
+
+        this.mockMvc.perform(get("/owners/1/pets/1/visits/new").header("referer","https/"))
+                .andExpect(status().isOk())
+                .andExpect(model().attributeExists("visit"))
+                .andExpect(view().name("pets/createOrUpdateVisitForm"));
+        verify(this.petService,times(1)).findById(any());
+        verifyNoInteractions(this.visitService);
+    }
+
+    @Test
+    public void testInitVisitCreationFormWithoutReferer() throws Exception {
 
         this.mockMvc.perform(get("/owners/1/pets/1/visits/new"))
                 .andExpect(status().isOk())
