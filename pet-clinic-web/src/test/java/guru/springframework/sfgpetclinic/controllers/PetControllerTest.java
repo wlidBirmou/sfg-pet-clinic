@@ -83,7 +83,20 @@ class PetControllerTest {
 
 
     @Test
-    public void testInitCreationForm() throws Exception{
+    public void testInitCreationFormWithReferer() throws Exception{
+
+        this.mockMvc.perform(get("/owners/1/pets/new").header("referer","https/"))
+                .andExpect(status().isOk())
+                .andExpect(model().attributeExists("types"))
+                .andExpect(model().attribute("types",hasSize(3)))
+                .andExpect(model().attributeExists("owner"))
+                .andExpect(model().attributeExists("pet"))
+                .andExpect(model().attributeExists("referer"))
+                .andExpect(model().attribute("pet", Matchers.hasProperty("id", IsNull.nullValue())))
+                .andExpect(view().name("pets/createOrUpdatePetForm"));
+    }
+    @Test
+    public void testInitCreationFormWithoutReferer() throws Exception{
 
         this.mockMvc.perform(get("/owners/1/pets/new"))
                 .andExpect(status().isOk())
@@ -91,6 +104,7 @@ class PetControllerTest {
                 .andExpect(model().attribute("types",hasSize(3)))
                 .andExpect(model().attributeExists("owner"))
                 .andExpect(model().attributeExists("pet"))
+                .andExpect(model().attributeExists("referer"))
                 .andExpect(model().attribute("pet", Matchers.hasProperty("id", IsNull.nullValue())))
                 .andExpect(view().name("pets/createOrUpdatePetForm"));
     }

@@ -2,6 +2,7 @@ package guru.springframework.sfgpetclinic.controllers;
 
 import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.services.OwnerService;
+import guru.springframework.sfgpetclinic.utilities.WebUtilities;
 import org.hamcrest.core.IsNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -49,7 +50,22 @@ class OwnerControllerTest {
 
 
     @Test
-    void viewOwner() throws Exception{
+    void testViewOwnerWithReferer() throws Exception{
+        Owner owner=Owner.builder().id(1l).firstName("Abderrahim").lastName("LAAKAB").address("123 Sidi yahia").city("Algiers").telephone("0014383720520").build();
+
+        when(this.ownerService.findById(anyLong())).thenReturn(owner);
+
+        this.mockMvc.perform(get("/owners/1").header("referer","https://"))
+                .andExpect(status().isOk())
+                .andExpect(model().attributeExists("owner"))
+                .andExpect(model().attributeExists("referer"))
+                .andExpect(model().attribute("owner",hasProperty("id",is(1L))))
+                .andExpect(view().name("owners/ownerDetails"));
+    }
+
+
+    @Test
+    void testViewOwnerWithoutReferer() throws Exception{
         Owner owner=Owner.builder().id(1l).firstName("Abderrahim").lastName("LAAKAB").address("123 Sidi yahia").city("Algiers").telephone("0014383720520").build();
 
         when(this.ownerService.findById(anyLong())).thenReturn(owner);
@@ -57,13 +73,15 @@ class OwnerControllerTest {
         this.mockMvc.perform(get("/owners/1"))
                 .andExpect(status().isOk())
                 .andExpect(model().attributeExists("owner"))
+                .andExpect(model().attributeExists("referer"))
+                .andExpect(model().attribute("referer", is(WebUtilities.WEB_BASE_URL+"/owners/find")))
                 .andExpect(model().attribute("owner",hasProperty("id",is(1L))))
                 .andExpect(view().name("owners/ownerDetails"));
     }
 
     @Test
     void findOwners() throws Exception{
-        this.mockMvc.perform(get("/owners/find"))
+        this.mockMvc.perform(get("/owners/find").header("referer","http//:referer"))
                 .andExpect(status().isOk())
                 .andExpect(model().attributeExists("owner"))
                 .andExpect(model().attribute("owner",hasProperty("id",nullValue())))

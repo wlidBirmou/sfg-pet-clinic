@@ -2,7 +2,12 @@ package guru.springframework.sfgpetclinic.controllers;
 
 import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.services.OwnerService;
+import guru.springframework.sfgpetclinic.utilities.WebUtilities;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,9 +17,11 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/owners")
+@Slf4j
 public class OwnerController {
 
     private final OwnerService ownerService;
@@ -30,10 +37,12 @@ public class OwnerController {
 
 
     @GetMapping("/{id}")
-    public ModelAndView viewOwner(@PathVariable Long id){
+    public ModelAndView viewOwner(@PathVariable Long id, @RequestHeader(HttpHeaders.REFERER) Optional<String> refererOptional){
         ModelAndView modelAndView=new ModelAndView("owners/ownerDetails");
         Owner owner=this.ownerService.findById(id);
         modelAndView.addObject("owner",owner);
+        if(refererOptional.isPresent()) modelAndView.addObject("referer", refererOptional.get());
+        else modelAndView.addObject("referer", WebUtilities.WEB_BASE_URL+"/owners/find");
         return  modelAndView;
     }
 
@@ -61,8 +70,10 @@ public class OwnerController {
     }
 
     @GetMapping("/new")
-    public String initCreationForm(Model model){
+    public String initCreationForm(Model model, @RequestHeader(HttpHeaders.REFERER) Optional<String> refererOptional){
         model.addAttribute("owner",new Owner());
+        if(refererOptional.isPresent()) model.addAttribute("referer", refererOptional.get());
+        else model.addAttribute("referer", WebUtilities.WEB_BASE_URL+"/owners/find");
         return "owners/createOrUpdateForm";
     }
 
@@ -76,9 +87,11 @@ public class OwnerController {
     }
 
     @GetMapping("/{id}/edit")
-    public String initUpdateForm(Model model,@PathVariable Long id){
+    public String initUpdateForm(Model model,@PathVariable Long id, @RequestHeader(HttpHeaders.REFERER) Optional<String> refererOptional){
         Owner owner=this.ownerService.findById(id);
         model.addAttribute("owner",owner);
+        if(refererOptional.isPresent()) model.addAttribute("referer", refererOptional.get());
+        else model.addAttribute("referer", WebUtilities.WEB_BASE_URL+"/owners/find");
         return "owners/createOrUpdateForm";
     }
 

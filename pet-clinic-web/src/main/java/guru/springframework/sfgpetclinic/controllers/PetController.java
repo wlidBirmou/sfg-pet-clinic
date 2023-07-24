@@ -6,7 +6,9 @@ import guru.springframework.sfgpetclinic.model.PetType;
 import guru.springframework.sfgpetclinic.services.OwnerService;
 import guru.springframework.sfgpetclinic.services.PetService;
 import guru.springframework.sfgpetclinic.services.PetTypeService;
+import guru.springframework.sfgpetclinic.utilities.WebUtilities;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.beans.PropertyEditorSupport;
 import java.time.LocalDate;
+import java.util.Optional;
 import java.util.Set;
 
 @Controller
@@ -50,10 +53,12 @@ public class PetController {
 
 
     @GetMapping("/pets/new")
-    public String initCreationForm(Model model){
+    public String initCreationForm(Model model, @RequestHeader(HttpHeaders.REFERER) Optional<String> refererOptional){
         Pet pet=new Pet();
         pet.setOwner((Owner)model.getAttribute("owner"));
         model.addAttribute("pet",pet);
+        if(refererOptional.isPresent()) model.addAttribute("referer", refererOptional.get());
+        else model.addAttribute("referer", WebUtilities.WEB_BASE_URL+"/owners/find");
         return "pets/createOrUpdatePetForm";
     }
 
@@ -67,10 +72,12 @@ public class PetController {
     }
 
     @GetMapping("/pets/{petId}/edit")
-    public String initUpdateForm(Model model,@PathVariable Long petId){
+    public String initUpdateForm(Model model,@PathVariable Long petId, @RequestHeader(HttpHeaders.REFERER) Optional<String> refererOptional){
         Pet pet=this.petService.findById(petId);
         pet.setOwner((Owner)model.getAttribute("owner"));
         model.addAttribute("pet",pet);
+        if(refererOptional.isPresent()) model.addAttribute("referer", refererOptional.get());
+        else model.addAttribute("referer", WebUtilities.WEB_BASE_URL+"/owners/find");
         return "pets/createOrUpdatePetForm";
     }
 
