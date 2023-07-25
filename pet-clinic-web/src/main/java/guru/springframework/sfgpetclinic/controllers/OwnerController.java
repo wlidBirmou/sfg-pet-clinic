@@ -37,7 +37,7 @@ public class OwnerController {
 
 
     @GetMapping("/{id}")
-    public ModelAndView viewOwner(@PathVariable Long id, @RequestHeader(HttpHeaders.REFERER) Optional<String> refererOptional){
+    public ModelAndView viewOwner(@PathVariable("id") Long id, @RequestHeader(HttpHeaders.REFERER) Optional<String> refererOptional){
         ModelAndView modelAndView=new ModelAndView("owners/ownerDetails");
         Owner owner=this.ownerService.findById(id);
         modelAndView.addObject("owner",owner);

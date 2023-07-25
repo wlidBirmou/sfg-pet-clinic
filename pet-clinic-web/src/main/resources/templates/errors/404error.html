@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
+
+<body>
+<div class="d-flex align-items-center justify-content-center vh-100">
+    <div class="text-center">
+        <h1 class="display-1 fw-bold">404</h1>
+        <p class="fs-3"><span th:text ="#{pageNotFound}" class="text-danger"></span> </p>
+        <p class="lead" th:text="${entityNotFound}"></p>
+        <a th:href="index" class="btn btn-primary" th:text="#{returnHome}"></a>
+    </div>
+</div>
+
+</body>
+</html>
