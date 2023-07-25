@@ -1,5 +1,6 @@
 package guru.springframework.sfgpetclinic.services.springdatajpa;
 
+import guru.springframework.sfgpetclinic.exceptions.NotFoundException;
 import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.model.Pet;
 import guru.springframework.sfgpetclinic.repositories.OwnerRepository;
@@ -8,11 +9,13 @@ import guru.springframework.sfgpetclinic.repositories.PetRepository;
 import guru.springframework.sfgpetclinic.services.PetService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedHashSet;
+import java.util.Locale;
 import java.util.Set;
 
 @Service
@@ -22,12 +25,15 @@ import java.util.Set;
 public class PetSDJpaService implements PetService {
 
     private final PetRepository petRepository;
-
+    private final MessageSource messageSource;
 
     @Override
-    public Pet findById(Long aLong) {
-        return this.petRepository.findById(aLong).orElse(null);
+    public Pet findById(Long id) {
+        Object[] exceptionArguments={this.messageSource.getMessage("pet",new Object[0], Locale.US),id};
+        return this.petRepository.findById(id).orElseThrow(()-> new NotFoundException(messageSource.getMessage("entityNotExistById",exceptionArguments,
+                Locale.US)));
     }
+
 
     @Override
     public Pet save(Pet pet) {

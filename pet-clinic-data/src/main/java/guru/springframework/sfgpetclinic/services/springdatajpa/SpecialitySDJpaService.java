@@ -1,14 +1,19 @@
 package guru.springframework.sfgpetclinic.services.springdatajpa;
 
 
+import guru.springframework.sfgpetclinic.exceptions.NotFoundException;
+import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.model.Speciality;
 import guru.springframework.sfgpetclinic.services.SpecialityService;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import guru.springframework.sfgpetclinic.repositories.SpecialityRepository;
 import java.util.LinkedHashSet;
+import java.util.Locale;
 import java.util.Set;
 
 
@@ -16,17 +21,18 @@ import java.util.Set;
 @Service
 @Profile("springdatajpa")
 @Slf4j
+@AllArgsConstructor
 public class SpecialitySDJpaService implements SpecialityService {
 
     private final SpecialityRepository specialityRepository;
+    private final MessageSource messageSource;
 
-    public SpecialitySDJpaService(SpecialityRepository specialityRepository) {
-        this.specialityRepository = specialityRepository;
-    }
 
     @Override
-    public Speciality findById(Long aLong) {
-        return this.specialityRepository.findById(aLong).orElse(null);
+    public Speciality findById(Long id) {
+        Object[] exceptionArguments={this.messageSource.getMessage("speciality",new Object[0], Locale.US),id};
+        return this.specialityRepository.findById(id).orElseThrow(()-> new NotFoundException(messageSource.getMessage("entityNotExistById",exceptionArguments,
+                Locale.US)));
     }
 
     @Override
@@ -47,7 +53,7 @@ public class SpecialitySDJpaService implements SpecialityService {
     }
 
     @Override
-    public void deleteById(Long aLong) {
-        this.specialityRepository.deleteById(aLong);
+    public void deleteById(Long id) {
+        this.specialityRepository.deleteById(id);
     }
 }

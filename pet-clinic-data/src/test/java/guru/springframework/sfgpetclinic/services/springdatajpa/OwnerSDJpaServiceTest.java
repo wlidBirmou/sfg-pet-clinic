@@ -1,5 +1,6 @@
 package guru.springframework.sfgpetclinic.services.springdatajpa;
 
+import guru.springframework.sfgpetclinic.exceptions.NotFoundException;
 import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.repositories.OwnerRepository;
 import guru.springframework.sfgpetclinic.repositories.PetRepository;
@@ -10,6 +11,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.context.MessageSource;
 
 import java.util.*;
 
@@ -22,38 +24,49 @@ class OwnerSDJpaServiceTest {
     @Mock
     private  OwnerRepository ownerRepository;
     @Mock
-    private  PetRepository petRepository;
-    @Mock
-    private  PetTypeRepository petTypeRepository;
-
+    private MessageSource messageSource;
     @InjectMocks
-    OwnerSDJpaService ownerSDJpaService;
-    Owner owner;
+    private OwnerSDJpaService ownerSDJpaService;
+    private Owner owner;
     @BeforeEach
     void setUp() {
         this.owner = Owner.builder().id(1l).firstName("Alan").lastName("Smith").address("123 fisi").city("Algiers").telephone("14e340239").build();
-        this.ownerSDJpaService.save(owner);
 
     }
 
     @Test
-    void findById() {
+    void testFindById() {
         when(this.ownerRepository.findById(1l)).thenReturn(Optional.of(this.owner));
+        when(this.messageSource.getMessage(anyString(), any(Object[].class) , any(Locale.class))).thenReturn("pet");
+
         Owner returnedOwner=this.ownerSDJpaService.findById(1l);
         assertNotNull(returnedOwner);
         assertEquals(1l,returnedOwner.getId());
+        verify(this.ownerRepository,times(1)).findById(anyLong());
+        verify(this.messageSource,times(1)).getMessage(anyString(),any(Object[].class),any(Locale.class));
     }
 
     @Test
-    void save() {
+    void testFindByIdNotFound() {
+        when(this.ownerRepository.findById(1l)).thenReturn(Optional.empty());
+        when(this.messageSource.getMessage(anyString(), any(Object[].class) , any(Locale.class))).thenReturn("pet");
+
+        assertThrows(NotFoundException.class,()-> this.ownerSDJpaService.findById(1l));
+        verify(this.ownerRepository,times(1)).findById(anyLong());
+        verify(this.messageSource,times(2)).getMessage(anyString(),any(Object[].class),any(Locale.class));
+    }
+
+    @Test
+    void testSave() {
         when(this.ownerRepository.save(eq(owner))).thenReturn(owner);
         Owner savedOwner=this.ownerSDJpaService.save(owner);
         assertNotNull(savedOwner);
         assertEquals(savedOwner,owner);
+        verify(this.ownerRepository,times(1)).save(any());
     }
 
     @Test
-    void findAll() {
+    void testFindAll() {
         List<Owner> list=new ArrayList<>();
         list.add(owner);
 
@@ -62,23 +75,24 @@ class OwnerSDJpaServiceTest {
         Set<Owner> owners=this.ownerSDJpaService.findAll();
         assertNotNull(owners);
         assertEquals(1,owners.size());
+        verify(this.ownerRepository,times(1)).findAll();
     }
 
     @Test
-    void delete() {
+    void testDelete() {
         this.ownerSDJpaService.delete(owner);
         verify(this.ownerRepository,times(1)).delete(any());
      }
 
     @Test
-    void deleteById() {
+    void testDeleteById() {
         this.ownerSDJpaService.deleteById(1l);
         verify(this.ownerRepository,times(1)).deleteById(any());
     }
 
     @Test
-    void findByLastName() {
-        when(ownerRepository.findByLastName("Smith")).thenReturn(owner);
+    void testFindByLastName() {
+        when(ownerRepository.findByLastName("Smith")).thenReturn(Optional.of(owner));
         Owner smith=this.ownerSDJpaService.findByLastName("Smith");
         assertNotNull(smith);
         assertEquals("Smith",smith.getLastName() );
@@ -86,7 +100,14 @@ class OwnerSDJpaServiceTest {
     }
 
     @Test
-    void findAllByLastName(){
+    void testFindByLastNameNotFound() {
+        when(ownerRepository.findByLastName("Smith")).thenReturn(Optional.empty());
+        assertThrows(NotFoundException.class, ()->this.ownerSDJpaService.findByLastName("Smith") );
+        verify(this.ownerRepository,times(1)).findByLastName(any());
+    }
+
+    @Test
+    void testFindAllByLastName(){
         List<Owner> owners=new ArrayList<>();
         owners.add(Owner.builder().id(1l).lastName("Laakab").firstName("Abderrahim").telephone("268466556").city("CDN").build());
         owners.add(Owner.builder().id(2l).lastName("Laakab").firstName("Mohamed").telephone("268466556").city("NDG").build());
@@ -100,7 +121,7 @@ class OwnerSDJpaServiceTest {
     }
 
     @Test
-    void findAllByLastNameWhenEmpty (){
+    void testFindAllByLastNameWhenEmpty (){
         List<Owner> owners=new ArrayList<>();
         when(this.ownerRepository.findAllByLastNameContains(anyString())).thenReturn(owners);
         List<Owner> ownersResult=this.ownerSDJpaService.findAllByLastNameContains("");

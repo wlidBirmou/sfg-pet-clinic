@@ -1,0 +1,108 @@
+Index: pet-clinic-data/src/test/java/guru/springframework/sfgpetclinic/services/springdatajpa/VisitSDJpaServiceTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pet-clinic-data/src/test/java/guru/springframework/sfgpetclinic/services/springdatajpa/VisitSDJpaServiceTest.java b/pet-clinic-data/src/test/java/guru/springframework/sfgpetclinic/services/springdatajpa/VisitSDJpaServiceTest.java
+new file mode 100644
+--- /dev/null	(date 1690314699151)
++++ b/pet-clinic-data/src/test/java/guru/springframework/sfgpetclinic/services/springdatajpa/VisitSDJpaServiceTest.java	(date 1690314699151)
+@@ -0,0 +1,97 @@
++package guru.springframework.sfgpetclinic.services.springdatajpa;
++
++import guru.springframework.sfgpetclinic.exceptions.NotFoundException;
++import guru.springframework.sfgpetclinic.model.Visit;
++import guru.springframework.sfgpetclinic.repositories.VisitRepository;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.InjectMocks;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.springframework.context.MessageSource;
++
++import java.util.*;
++
++import static org.junit.jupiter.api.Assertions.*;
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.ArgumentMatchers.anyLong;
++import static org.mockito.ArgumentMatchers.eq;
++import static org.mockito.Mockito.*;
++import static org.mockito.Mockito.times;
++
++
++@ExtendWith(MockitoExtension.class)
++class VisitSDJpaServiceTest {
++    @Mock
++    private VisitRepository visitRepository;
++    @Mock
++    private MessageSource messageSource;
++
++    @InjectMocks
++    private VisitSDJpaService visitSDJpaService;
++    private Visit visit;
++    @BeforeEach
++    void setUp() {
++        this.visit = Visit.builder().id(1l).description("spe1").build();
++    }
++
++    @Test
++    void testFindById() {
++        when(this.visitRepository.findById(1l)).thenReturn(Optional.of(this.visit));
++        when(this.messageSource.getMessage(anyString(), any(Object[].class) , any(Locale.class))).thenReturn("pet");
++
++        Visit returnedVisit=this.visitSDJpaService.findById(1l);
++        assertNotNull(returnedVisit);
++        assertEquals(1l,returnedVisit.getId());
++        verify(this.visitRepository,times(1)).findById(anyLong());
++        verify(this.messageSource,times(1)).getMessage(anyString(),any(Object[].class),any(Locale.class));
++    }
++
++    @Test
++    void testFindByIdNotFound() {
++        when(this.visitRepository.findById(1l)).thenReturn(Optional.empty());
++        when(this.messageSource.getMessage(anyString(), any(Object[].class) , any(Locale.class))).thenReturn("pet");
++
++        assertThrows(NotFoundException.class,()-> this.visitSDJpaService.findById(1l));
++        verify(this.visitRepository,times(1)).findById(anyLong());
++        verify(this.messageSource,times(2)).getMessage(anyString(),any(Object[].class),any(Locale.class));
++
++    }
++
++    @Test
++    void testSave() {
++        when(this.visitRepository.save(any())).thenReturn(visit);
++
++        Visit savedVisit=this.visitSDJpaService.save(visit);
++
++        assertNotNull(savedVisit);
++        assertEquals(savedVisit,visit);
++        verify(this.visitRepository,times(1)).save(any());
++    }
++
++    @Test
++    void testFindAll() {
++        List<Visit> list=new ArrayList<>();
++        list.add(visit);
++
++        when(this.visitRepository.findAll()).thenReturn(list);
++
++        Set<Visit> visits=this.visitSDJpaService.findAll();
++        assertNotNull(visits);
++        assertEquals(1,visits.size());
++        verify(this.visitRepository,times(1)).findAll();
++    }
++
++    @Test
++    void testDelete() {
++        this.visitSDJpaService.delete(visit);
++        verify(this.visitRepository,times(1)).delete(any());
++    }
++
++    @Test
++    void testDeleteById() {
++        this.visitSDJpaService.deleteById(1l);
++        verify(this.visitRepository,times(1)).deleteById(any());
++    }
++}
+\ No newline at end of file
